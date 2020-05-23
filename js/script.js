@@ -159,10 +159,10 @@ function startNewGame() {
 }
 
 function updateScores() {
-  document.querySelector('#scoreRows').innerHTML = '';
   if (localStorage.length == 0) {
     console.log('local storage is empty');
   } else {
+    document.querySelector('#scoreRows').innerHTML = '';
     let savedData = JSON.parse(localStorage.getItem('savedData'));
     savedData.reverse();
     savedData.forEach((data, index) => {
