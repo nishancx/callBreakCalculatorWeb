@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Call Break</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="js/script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&amp;display=swap" rel="stylesheet"/>
+  </head>
+  <body></body>
+  <div id="nameInput">
+    <div id="nameInputTitle">Plase enter names of the players:</div>
+    <div id="nameInputContainer">
+      <div class="pnic" id="panic"> Player A 
+        <input class="pni" type="text" input-mode="text" onClick="this.setSelectionRange(0, this.value.length)" id="pani"/>
+      </div>
+      <div class="pnic" id="pbnic"> Player B
+        <input class="pni" type="text" input-mode="text" onClick="this.setSelectionRange(0, this.value.length)" id="pbni"/>
+      </div>
+      <div class="pnic" id="pcnic"> Player C
+        <input class="pni" type="text" input-mode="text" onClick="this.setSelectionRange(0, this.value.length)" id="pcni"/>
+      </div>
+      <div class="pnic" id="pdnic"> Player D
+        <input class="pni" type="text" input-mode="text" onClick="this.setSelectionRange(0, this.value.length)" id="pdni"/>
+      </div>
+    </div>
+    <div id="nameInputSubmitContainer">
+      <button class="styledButton" id="nameInputSubmit" onclick="submitNames()">Start</button>
+    </div>
+  </div>
+  <div id="mainContainer">
+    <div id="scores">
+      <div id="nameRow"> 
+        <div class="nameBlock" id="nameA">Person A</div>
+        <div class="nameBlock" id="nameB">Person B</div>
+        <div class="nameBlock" id="nameC">Person C</div>
+        <div class="nameBlock" id="nameD">Person D</div>
+      </div>
+      <div class="scoreRow" id="scoreRow1">
+        <div class="scoreBlock" id="scoreRow1C1">
+          <div class="decrementer" onclick="decrement(this, 0)">-</div>
+          <div class="score"> 1</div>
+          <div class="incrementer" onclick="increment(this, 0)">+</div>
+        </div>
+        <div class="scoreBlock" id="scoreRow1C2">
+          <div class="decrementer" onclick="decrement(this, 1)"> -</div>
+          <div class="score"> 1</div>
+          <div class="incrementer" onclick="increment(this, 1)"> +</div>
+        </div>
+        <div class="scoreBlock" id="scoreRow1C3">
+          <div class="decrementer" onclick="decrement(this), 2"> -</div>
+          <div class="score"> 1</div>
+          <div class="incrementer" onclick="increment(this), 2"> +</div>
+        </div>
+        <div class="scoreBlock" id="scoreRow1C4">
+          <div class="decrementer" onclick="decrement(this, 3)"> -</div>
+          <div class="score"> 1</div>
+          <div class="incrementer" onclick="increment(this, 3)"> +</div>
+        </div>
+      </div>
+      <div class="scoreRow" id="scoreRow2">
+        <div class="scoreBlock" id="scoreRow2C1">
+          <div class="decrementer" onclick="decrement(this, 0)">-</div>
+          <div class="score"> 1</div>
+          <div class="incrementer" onclick="increment(this, 0)">+</div>
+        </div>
+        <div class="scoreBlock" id="scoreRow2C2">
+          <div class="decrementer" onclick="decrement(this, 1)"> -</div>
+          <div class="score"> 1</div>
+          <div class="incrementer" onclick="increment(this, 1)"> +</div>
+        </div>
+        <div class="scoreBlock" id="scoreRow2C3">
+          <div class="decrementer" onclick="decrement(this), 2"> -</div>
+          <div class="score"> 1</div>
+          <div class="incrementer" onclick="increment(this), 2"> +</div>
+        </div>
+        <div class="scoreBlock" id="scoreRow2C4">
+          <div class="decrementer" onclick="decrement(this, 3)"> -</div>
+          <div class="score"> 1</div>
+          <div class="incrementer" onclick="increment(this, 3)"> +</div>
+        </div>
+      </div>
+      <div class="scoreRow" id="scoreRow3">
+        <div class="scoreBlock" id="scoreRow3C1">
+          <div class="decrementer" onclick="decrement(this, 0)">-</div>
+          <div class="score"> 1</div>
+          <div class="incrementer" onclick="increment(this, 0)">+</div>
+        </div>
+        <div class="scoreBlock" id="scoreRow3C2">
+          <div class="decrementer" onclick="decrement(this, 1)"> -</div>
+          <div class="score"> 1</div>
+          <div class="incrementer" onclick="increment(this, 1)"> +</div>
+        </div>
+        <div class="scoreBlock" id="scoreRow3C3">
+          <div class="decrementer" onclick="decrement(this), 2"> -</div>
+          <div class="score"> 1</div>
+          <div class="incrementer" onclick="increment(this), 2"> +</div>
+        </div>
+        <div class="scoreBlock" id="scoreRow3C4">
+          <div class="decrementer" onclick="decrement(this, 3)"> -</div>
+          <div class="score"> 1</div>
+          <div class="incrementer" onclick="increment(this, 3)"> +</div>
+        </div>
+      </div>
+      <div class="scoreRow" id="scoreRow4">
+        <div class="scoreBlock" id="scoreRow4C1">
+          <div class="decrementer" onclick="decrement(this, 0)">-</div>
+          <div class="score"> 1</div>
+          <div class="incrementer" onclick="increment(this, 0)">+</div>
+        </div>
+        <div class="scoreBlock" id="scoreRow4C2">
+          <div class="decrementer" onclick="decrement(this, 1)"> -</div>
+          <div class="score"> 1</div>
+          <div class="incrementer" onclick="increment(this, 1)"> +</div>
+        </div>
+        <div class="scoreBlock" id="scoreRow4C3">
+          <div class="decrementer" onclick="decrement(this), 2"> -</div>
+          <div class="score"> 1</div>
+          <div class="incrementer" onclick="increment(this), 2"> +</div>
+        </div>
+        <div class="scoreBlock" id="scoreRow4C4">
+          <div class="decrementer" onclick="decrement(this, 3)"> -</div>
+          <div class="score"> 1</div>
+          <div class="incrementer" onclick="increment(this, 3)"> +</div>
+        </div>
+      </div>
+      <div class="scoreRow" id="scoreRow5">
+        <div class="scoreBlock" id="scoreRow5C1">
+          <div class="decrementer" onclick="decrement(this, 0)">-</div>
+          <div class="score"> 1</div>
+          <div class="incrementer" onclick="increment(this, 0)">+</div>
+        </div>
+        <div class="scoreBlock" id="scoreRow5C2">
+          <div class="decrementer" onclick="decrement(this, 1)"> -</div>
+          <div class="score"> 1</div>
+          <div class="incrementer" onclick="increment(this, 1)"> +</div>
+        </div>
+        <div class="scoreBlock" id="scoreRow5C3">
+          <div class="decrementer" onclick="decrement(this), 2"> -</div>
+          <div class="score"> 1</div>
+          <div class="incrementer" onclick="increment(this), 2"> +</div>
+        </div>
+        <div class="scoreBlock" id="scoreRow5C4">
+          <div class="decrementer" onclick="decrement(this, 3)"> -</div>
+          <div class="score"> 1</div>
+          <div class="incrementer" onclick="increment(this, 3)"> +</div>
+        </div>
+      </div>
+      <div id="totalRow">
+        <div class="totalBlock" id="totalRowC1">-</div>
+        <div class="totalBlock" id="totalRowC2">-</div>
+        <div class="totalBlock" id="totalRowC3">-</div>
+        <div class="totalBlock" id="totalRowC4">-</div>
+      </div>
+    </div>
+    <div id="startRound">
+      <button class="styledButton" id="startRoundButton" onclick="startRound()">Start the Round </button>
+      <button class="styledButton buttonInactive" id="startNextRoundButton" onclick="startNextRound()">Start Next Round</button>
+    </div>
+  </div>
+</html>
