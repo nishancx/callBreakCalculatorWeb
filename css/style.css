@@ -24,19 +24,18 @@ body {
   border: 0;
 }
 
-.clickable {
-  user-select: none;
-}
-
 .pointer {
   cursor: pointer;
 }
-.displayNone{
+
+.displayNone {
   display: none;
 }
-.displayBlock{
+
+.displayBlock {
   display: block;
 }
+
 input,
 button {
   font-family: 'Montserrat', sans-serif;
@@ -109,14 +108,19 @@ button {
   display: inline-block;
   font-size: 1.2rem;
   transition: color 0.2s;
+  font-weight: 300;
+  user-select: none;
 }
+
 
 .styledButton:hover {
   color: #000;
 }
-.buttonInactive{
+
+.buttonInactive {
   display: none;
 }
+
 #mainContainer {
   height: 100vh;
 }
@@ -202,7 +206,65 @@ button {
   text-align: center;
 }
 
-@media screen and (max-width: 650px) {
+#scoreTable {
+  padding: 50px 0;
+  /* height: 100vh; */
+}
+
+#scoreTitle {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 50px;
+}
+
+.scoreTableRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  min-height: 50px;
+  gap: 10px;
+  margin-top: 25px;
+  padding: 0 30px;
+}
+
+.scoreTableBlock {
+  border-radius: 25px;
+  background: #454344;
+  text-align: center;
+  padding: 5px 0;
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 20px;
+  text-align: center;
+}
+
+.scoreTableName {
+  /* display: inline-block; */
+  text-overflow: ellipsis;
+  text-align: center;
+  /* height: 50px; */
+  /* line-height: 50px; */
+  white-space: nowrap;
+  overflow: hidden;
+  /* margin-bottom: 10px; */
+  /* margin: auto; */
+}
+
+.scoreTableScore {
+  /* display: inline-block; */
+
+  background-color: var(--background);
+  border-radius: 20px;
+  width: 60px;
+  margin: auto;
+  height: 30px;
+  line-height: 30px;
+
+}
+
+@media screen and (max-width: 700px) {
   #nameInputContainer {
     /* grid-template-columns: 1fr; */
     gap: 40px 10px;
@@ -213,10 +275,6 @@ button {
     width: 130px;
   }
 
-
-}
-
-@media screen and (max-width: 700px) {
   #scores {
     padding: 10px;
   }
@@ -287,5 +345,25 @@ button {
   .scoreRow {
     grid-template-columns: repeat(4, 48px);
     justify-content: space-around;
+  }
+
+  .scoreTableRow {
+    padding: 0 10px;
+    gap: 5px;
+  }
+
+  .scoreTableBlock {
+    grid-template-columns: auto;
+    justify-content: center;
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
+
+  .scoreTableName {
+    padding: 0 5px;
+  }
+
+  .scoreTableScore {
+    margin-top: 10px;
   }
 }

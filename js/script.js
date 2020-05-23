@@ -2,6 +2,8 @@ var incDecVal = 1;
 var round = 0;
 var roundPoints = [];
 
+updateScores();
+
 function submitNames() {
   let nameInputs = document.querySelectorAll('.pni');
   nameInputs = Array.apply(null, nameInputs);
@@ -54,6 +56,7 @@ function decrement(decrementer, index) {
       decrementer.nextElementSibling.innerText = (parseFloat(score) - incDecVal).toFixed(1);
     }
   }
+
   if (score == parseInt(roundPoints[index]) && incDecVal == .1) {
     decrementer.nextElementSibling.innerText = -Math.abs(parseInt(roundPoints[index]));
   }
@@ -109,8 +112,28 @@ function flipButtons() {
 }
 
 function startNewGame() {
+  let name, totalScore, data = [];
+  document.querySelectorAll('.nameBlock').forEach((nameBlock, index) => {
+    name = nameBlock.innerText;
+    totalScore = document.querySelectorAll('.totalBlock')[index].innerText;
+    data.push({
+      name,
+      totalScore
+    });
+  });
+  let savedData;
+  if (localStorage.length > 0) {
+    savedData = JSON.parse(localStorage.getItem('savedData'));
+    savedData.push(data);
+  } else {
+    savedData = [data];
+  }
+  if (savedData.length == 11) {
+    savedData.shift();
+  }
+  savedData = JSON.stringify(savedData);
+  localStorage.setItem('savedData', savedData)
   document.querySelector('#nameInput').style.opacity = '1';
-
   document.querySelector('#nameInput').style.display = 'block';
   let flag = 0;
   document.querySelectorAll('.scoreRow').forEach(scoreRow => {
@@ -118,7 +141,7 @@ function startNewGame() {
       Array.from(scoreBlock.children)[0].classList.remove('displayNone');
       Array.from(scoreBlock.children)[1].innerText = '1';
       Array.from(scoreBlock.children)[2].classList.remove('displayNone');
-    scoreBlock.style.gridTemplateColumns = 'auto auto auto';
+      scoreBlock.style.gridTemplateColumns = 'auto auto auto';
     });
     if (flag == 0) {
       flag++;
@@ -132,5 +155,39 @@ function startNewGame() {
   incDecVal = 1;
   round = 0;
   flipButtons();
+  updateScores()
+}
 
+function updateScores() {
+  document.querySelector('#scoreRows').innerHTML = '';
+  if (localStorage.length == 0) {
+    console.log('local storage is empty');
+  } else {
+    let savedData = JSON.parse(localStorage.getItem('savedData'));
+    savedData.reverse();
+    savedData.forEach((data, index) => {
+      let scoreTableRow = document.createElement('DIV');
+      scoreTableRow.classList.add('scoreTableRow');
+      data.forEach((item, indexMini) => {
+        let scoreTableBlock = document.createElement('DIV');
+        scoreTableBlock.classList.add('scoreTableBlock');
+        let scoreTableName = document.createElement('DIV');
+        scoreTableName.classList.add('scoreTableName');
+        let scoreTableScore = document.createElement('DIV');
+        scoreTableScore.classList.add('scoreTableScore');
+        scoreTableName.innerText = item.name;
+        scoreTableName.id = "scoreTableNameR" + index + "c" + indexMini;
+        scoreTableScore.innerText = item.totalScore;
+        scoreTableName.id = "scoreTableNameR" + index + "c" + indexMini;
+        scoreTableScore.id = "scoreTableScoreR" + index + "c" + indexMini;
+        scoreTableBlock.id = "scoreTableBlockR" + index + "c" + indexMini;
+        scoreTableBlock.appendChild(scoreTableName);
+        scoreTableBlock.appendChild(scoreTableScore);
+        scoreTableRow.appendChild(scoreTableBlock);
+      });
+      document.querySelector('#scoreTable').appendChild(scoreTableRow);
+      document.querySelector('#scoreRows').appendChild(scoreTableRow);
+    });
+
+  }
 }
