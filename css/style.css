@@ -1,5 +1,4 @@
 :root {
-  /* --bgImg: radial-gradient(ellipse closest-side at 50% 50%, #3a3f45, #37383c 25%, #343233); */
   --background: #37383c;
   --lighterGrey: #454344;
   --darkerGrey: #232122;
@@ -10,7 +9,6 @@ body {
   background: var(--background);
   height: 100vh;
   margin: 0;
-  /* overflow: hidden; */
   color: #f7f7f7;
   font-family: 'Montserrat', sans-serif;
   min-height: 500px;
@@ -22,10 +20,6 @@ body {
 
 ::-moz-focus-inner {
   border: 0;
-}
-
-.pointer {
-  cursor: pointer;
 }
 
 .displayNone {
@@ -44,18 +38,15 @@ button {
 
 #nameInput {
   z-index: 1;
-
   height: 100vh;
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   background: var(--background);
-
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
-  /* padding-bottom: 20vh; */
   padding: 15vh 0 25vh 0;
   box-sizing: border-box;
   justify-content: center;
@@ -70,10 +61,7 @@ button {
 
 #nameInputContainer {
   height: auto;
-  /* width: 100px; */
-  /* border: 1px solid #fff; */
   gap: 100px;
-  /* width: auto; */
   display: grid;
   grid-template-columns: 1fr 1fr;
   text-align: center;
@@ -154,7 +142,6 @@ button {
 #totalRow {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  /* grid-template-columns: ; */
   gap: 2%;
 }
 
@@ -182,7 +169,6 @@ button {
 
 .incrementer,
 .decrementer {
-  /* height: 100% !important; */
   background: var(--lighterGrey);
   border-radius: 100%;
   font-size: 1.5rem;
@@ -197,9 +183,6 @@ button {
   padding-top: 20px;
 }
 
-#startNextRoundButton {
-  /* display: none; */
-}
 
 #startRound {
   margin-top: 20px;
@@ -208,7 +191,6 @@ button {
 
 #scoreTable {
   padding: 50px 0;
-  /* height: 100vh; */
 }
 
 #scoreTitle {
@@ -241,20 +223,13 @@ button {
 }
 
 .scoreTableName {
-  /* display: inline-block; */
   text-overflow: ellipsis;
   text-align: center;
-  /* height: 50px; */
-  /* line-height: 50px; */
   white-space: nowrap;
   overflow: hidden;
-  /* margin-bottom: 10px; */
-  /* margin: auto; */
 }
 
 .scoreTableScore {
-  /* display: inline-block; */
-
   background-color: var(--background);
   border-radius: 20px;
   width: 60px;
@@ -286,8 +261,6 @@ button {
   #nameRow {
     margin-bottom: 10px;
     padding-bottom: 10px;
-    /* line-height: 40px; */
-
   }
 
   .nameBlock {
@@ -295,7 +268,6 @@ button {
     height: 40px;
   }
 
-  .nameBlock {}
 
   .scoreRow {
     margin-bottom: 10px;
@@ -303,20 +275,9 @@ button {
 
   .scoreBlock {
     padding: 4px;
-    /* background: #282627; */
-    /* display: grid; */
     box-sizing: border-box;
     grid-template-columns: auto;
 
-    /* width: 50px !important; */
-    /* overflow: hidden; */
-    /* text-align: center; */
-    /* justify-content: space-between; */
-
-  }
-
-  .score {
-    /* width: 40px; */
   }
 
   #totalRow {
