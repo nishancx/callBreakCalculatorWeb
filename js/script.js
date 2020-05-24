@@ -4,25 +4,25 @@ var roundPoints = [];
 
 updateScores();
 
-function submitNames() {
-  let nameInputs = document.querySelectorAll('.pni');
-  nameInputs = Array.apply(null, nameInputs);
-  nameInputs.forEach(nameInput => {
-    if (nameInput.value == '') {
-      boxShadowAlert(nameInput.id, 'red', 500);
-    }
-  });
-  if (nameInputs.every(nameInput => nameInput.value != '')) {
-    document.querySelector('#nameInput').style.opacity = '0';
-    setTimeout(() => {
-      document.querySelector('#nameInput').style.display = 'none';
-    }, 200);
-    let nameBlocks = document.querySelectorAll('.nameBlock');
-    for (let i = 0; i < 4; i++) {
-      nameBlocks[i].innerText = nameInputs[i].value
-    }
-  }
-}
+// function submitNames() {
+//   let nameInputs = document.querySelectorAll('.pni');
+//   nameInputs = Array.apply(null, nameInputs);
+//   nameInputs.forEach(nameInput => {
+//     if (nameInput.value == '') {
+//       boxShadowAlert(nameInput.id, 'red', 500);
+//     }
+//   });
+//   if (nameInputs.every(nameInput => nameInput.value != '')) {
+//     document.querySelector('#nameInput').style.opacity = '0';
+//     setTimeout(() => {
+//       document.querySelector('#nameInput').style.display = 'none';
+//     }, 200);
+//     let nameBlocks = document.querySelectorAll('.nameBlock');
+//     for (let i = 0; i < 4; i++) {
+//       nameBlocks[i].innerText = nameInputs[i].value
+//     }
+//   }
+// }
 
 function boxShadowAlert(id, color, duration) {
   document.querySelector(`#${id}`).style.boxShadow = `0 0 5px 1px  ${color}`;
@@ -77,9 +77,13 @@ function startRound() {
 }
 
 function startNextRound() {
+  console.log(round);
   if (round == 5) {
     startNewGame();
     return;
+  } else if (round == 4) {
+    saveData();
+    updateScores();
   }
   let scoreRow = document.querySelectorAll('.scoreRow')[round];
   let totalBlocks = document.querySelectorAll('.totalBlock');
@@ -111,10 +115,10 @@ function flipButtons() {
   document.querySelector('#startNextRoundButton').classList.toggle('buttonInactive');
 }
 
-function startNewGame() {
+function saveData() {
   let name, totalScore, data = [];
   document.querySelectorAll('.nameBlock').forEach((nameBlock, index) => {
-    name = nameBlock.innerText;
+    name = nameBlock.value;
     totalScore = document.querySelectorAll('.totalBlock')[index].innerText;
     data.push({
       name,
@@ -133,8 +137,12 @@ function startNewGame() {
   }
   savedData = JSON.stringify(savedData);
   localStorage.setItem('savedData', savedData)
-  document.querySelector('#nameInput').style.opacity = '1';
-  document.querySelector('#nameInput').style.display = 'block';
+
+}
+
+function startNewGame() {
+  // document.querySelector('#nameInput').style.opacity = '1';
+  // document.querySelector('#nameInput').style.display = 'block';
   let flag = 0;
   document.querySelectorAll('.scoreRow').forEach(scoreRow => {
     Array.from(scoreRow.children).forEach(scoreBlock => {
@@ -156,7 +164,6 @@ function startNewGame() {
   round = 0;
   document.querySelector('#startNextRoundButton').innerText = 'Start Next Round';
   flipButtons();
-  updateScores()
 }
 
 function updateScores() {

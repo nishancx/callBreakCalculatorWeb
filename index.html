@@ -13,7 +13,8 @@
 
 <body>
   <div id="mainContainer">
-    <div id="nameInput">
+
+    <!-- <div id="nameInput">
       <div id="nameInputTitle">Plase enter names of the players:</div>
       <div id="nameInputContainer">
         <div class="pnic" id="panic"> Player A
@@ -36,14 +37,14 @@
       <div id="nameInputSubmitContainer">
         <button class="styledButton" id="nameInputSubmit" onclick="submitNames()">Start</button>
       </div>
-    </div>
+    </div> -->
 
     <div id="scores">
       <div id="nameRow">
-        <div class="nameBlock" id="nameA">Person A</div>
-        <div class="nameBlock" id="nameB">Person B</div>
-        <div class="nameBlock" id="nameC">Person C</div>
-        <div class="nameBlock" id="nameD">Person D</div>
+        <input type="text" class="nameBlock" id="nameA" value="Person A" onClick="this.setSelectionRange(0, this.value.length)">
+        <input type="text" class="nameBlock" id="nameB" value="Person B" onClick="this.setSelectionRange(0, this.value.length)">
+        <input type="text" class="nameBlock" id="nameC" value="Person C" onClick="this.setSelectionRange(0, this.value.length)">
+        <input type="text" class="nameBlock" id="nameD" value="Person D" onClick="this.setSelectionRange(0, this.value.length)">
       </div>
       <div class="scoreRow" id="scoreRow1">
         <div class="scoreBlock" id="scoreRow1C1">
