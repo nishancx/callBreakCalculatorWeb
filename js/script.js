@@ -4,6 +4,12 @@ var roundPoints = [];
 
 updateScores();
 
+Array.from(document.querySelectorAll('.nameBlock')).forEach((nameBlock, index) => {
+  if (nameBlock.value == '') {
+    nameBlock.value = `Player ${index}`;
+  }
+})
+
 function boxShadowAlert(id, color, duration) {
   document.querySelector(`#${id}`).style.boxShadow = `0 0 5px 1px  ${color}`;
   setTimeout(() => {
