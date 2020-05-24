@@ -4,32 +4,11 @@ var roundPoints = [];
 
 updateScores();
 
-// function submitNames() {
-//   let nameInputs = document.querySelectorAll('.pni');
-//   nameInputs = Array.apply(null, nameInputs);
-//   nameInputs.forEach(nameInput => {
-//     if (nameInput.value == '') {
-//       boxShadowAlert(nameInput.id, 'red', 500);
-//     }
-//   });
-//   if (nameInputs.every(nameInput => nameInput.value != '')) {
-//     document.querySelector('#nameInput').style.opacity = '0';
-//     setTimeout(() => {
-//       document.querySelector('#nameInput').style.display = 'none';
-//     }, 200);
-//     let nameBlocks = document.querySelectorAll('.nameBlock');
-//     for (let i = 0; i < 4; i++) {
-//       nameBlocks[i].innerText = nameInputs[i].value
-//     }
-//   }
-// }
-
 function boxShadowAlert(id, color, duration) {
   document.querySelector(`#${id}`).style.boxShadow = `0 0 5px 1px  ${color}`;
   setTimeout(() => {
     document.querySelector(`#${id}`).style.boxShadow = '';
   }, duration);
-
 }
 
 function increment(incrementer, index) {
@@ -56,7 +35,6 @@ function decrement(decrementer, index) {
       decrementer.nextElementSibling.innerText = (parseFloat(score) - incDecVal).toFixed(1);
     }
   }
-
   if (score == parseInt(roundPoints[index]) && incDecVal == .1) {
     decrementer.nextElementSibling.innerText = -Math.abs(parseInt(roundPoints[index]));
   }
@@ -137,12 +115,9 @@ function saveData() {
   }
   savedData = JSON.stringify(savedData);
   localStorage.setItem('savedData', savedData)
-
 }
 
 function startNewGame() {
-  // document.querySelector('#nameInput').style.opacity = '1';
-  // document.querySelector('#nameInput').style.display = 'block';
   let flag = 0;
   document.querySelectorAll('.scoreRow').forEach(scoreRow => {
     Array.from(scoreRow.children).forEach(scoreBlock => {
@@ -196,6 +171,5 @@ function updateScores() {
       document.querySelector('#scoreTable').appendChild(scoreTableRow);
       document.querySelector('#scoreRows').appendChild(scoreTableRow);
     });
-
   }
 }
