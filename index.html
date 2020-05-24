@@ -12,31 +12,32 @@
 </head>
 
 <body>
-  <div id="nameInput">
-    <div id="nameInputTitle">Plase enter names of the players:</div>
-    <div id="nameInputContainer">
-      <div class="pnic" id="panic"> Player A
-        <input class="pni" type="text" input-mode="text" onClick="this.setSelectionRange(0, this.value.length)"
-          id="pani" value="Player A" />
-      </div>
-      <div class="pnic" id="pbnic"> Player B
-        <input class="pni" type="text" input-mode="text" onClick="this.setSelectionRange(0, this.value.length)"
-          id="pbni" value="Player B" />
-      </div>
-      <div class="pnic" id="pcnic"> Player C
-        <input class="pni" type="text" input-mode="text" onClick="this.setSelectionRange(0, this.value.length)"
-          id="pcni" value="Player C" />
-      </div>
-      <div class="pnic" id="pdnic"> Player D
-        <input class="pni" type="text" input-mode="text" onClick="this.setSelectionRange(0, this.value.length)"
-          id="pdni" value="Player D" />
-      </div>
-    </div>
-    <div id="nameInputSubmitContainer">
-      <button class="styledButton" id="nameInputSubmit" onclick="submitNames()">Start</button>
-    </div>
-  </div>
   <div id="mainContainer">
+    <div id="nameInput">
+      <div id="nameInputTitle">Plase enter names of the players:</div>
+      <div id="nameInputContainer">
+        <div class="pnic" id="panic"> Player A
+          <input class="pni" type="text" input-mode="text" onClick="this.setSelectionRange(0, this.value.length)"
+            id="pani" value="Player A" />
+        </div>
+        <div class="pnic" id="pbnic"> Player B
+          <input class="pni" type="text" input-mode="text" onClick="this.setSelectionRange(0, this.value.length)"
+            id="pbni" value="Player B" />
+        </div>
+        <div class="pnic" id="pcnic"> Player C
+          <input class="pni" type="text" input-mode="text" onClick="this.setSelectionRange(0, this.value.length)"
+            id="pcni" value="Player C" />
+        </div>
+        <div class="pnic" id="pdnic"> Player D
+          <input class="pni" type="text" input-mode="text" onClick="this.setSelectionRange(0, this.value.length)"
+            id="pdni" value="Player D" />
+        </div>
+      </div>
+      <div id="nameInputSubmitContainer">
+        <button class="styledButton" id="nameInputSubmit" onclick="submitNames()">Start</button>
+      </div>
+    </div>
+
     <div id="scores">
       <div id="nameRow">
         <div class="nameBlock" id="nameA">Person A</div>
@@ -168,6 +169,7 @@
       </button>
     </div>
   </div>
+
   <div id="scoreTable">
     <div id="scoreTitle">Recent Scores</div>
     <div id="scoreRows">

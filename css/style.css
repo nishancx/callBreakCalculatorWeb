@@ -38,9 +38,9 @@ button {
 
 #nameInput {
   z-index: 1;
-  height: 100vh;
+  height: 100%;
   width: 100%;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   background: var(--background);
@@ -111,6 +111,7 @@ button {
 
 #mainContainer {
   min-height: 100vh;
+  position: relative;
 }
 
 #scores {
