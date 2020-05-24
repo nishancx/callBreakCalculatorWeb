@@ -6,7 +6,7 @@ updateScores();
 
 Array.from(document.querySelectorAll('.nameBlock')).forEach((nameBlock, index) => {
   if (nameBlock.value == '') {
-    nameBlock.value = `Player ${index}`;
+    nameBlock.value = `Player ${index + 1}`;
   }
 })
 
@@ -61,7 +61,6 @@ function startRound() {
 }
 
 function startNextRound() {
-  console.log(round);
   if (round == 5) {
     startNewGame();
     return;
@@ -148,9 +147,7 @@ function startNewGame() {
 }
 
 function updateScores() {
-  if (localStorage.length == 0) {
-    console.log('local storage is empty');
-  } else {
+  if (localStorage.length > 0) {
     document.querySelector('#scoreRows').innerHTML = '';
     let savedData = JSON.parse(localStorage.getItem('savedData'));
     savedData.reverse();
