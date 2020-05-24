@@ -167,6 +167,11 @@ button {
 
 }
 
+.scoreBlockInactive {
+  grid-template-columns: 1fr;
+
+}
+
 .incrementer,
 .decrementer {
   background: var(--lighterGrey);
@@ -239,7 +244,7 @@ button {
 
 }
 
-#noScores{
+#noScores {
   text-align: center;
   padding: 20px;
 }
@@ -248,6 +253,10 @@ button {
   #nameInputContainer {
     gap: 40px 10px;
 
+  }
+
+  #nameInputTitle {
+    margin-bottom: 50px;
   }
 
   .pni {
@@ -278,6 +287,10 @@ button {
     box-sizing: border-box;
     grid-template-columns: auto;
 
+  }
+
+  .score {
+    width: 40px;
   }
 
   #totalRow {

@@ -87,7 +87,7 @@ function startNextRound() {
   Array.from(scoreRow.children).forEach(scoreBlock => {
     Array.from(scoreBlock.children)[0].classList.add('displayNone');
     Array.from(scoreBlock.children)[2].classList.add('displayNone');
-    scoreBlock.style.gridTemplateColumns = '1fr';
+    scoreBlock.classList.add('scoreBlockInactive');
     if (round == 0) {
       totalBlocks[index].innerText = Array.from(scoreBlock.children)[1].innerText;
     } else {
@@ -141,7 +141,7 @@ function startNewGame() {
       Array.from(scoreBlock.children)[0].classList.remove('displayNone');
       Array.from(scoreBlock.children)[1].innerText = '1';
       Array.from(scoreBlock.children)[2].classList.remove('displayNone');
-      scoreBlock.style.gridTemplateColumns = 'auto auto auto';
+      scoreBlock.classList.remove('scoreBlockInactive');
     });
     if (flag == 0) {
       flag++;
