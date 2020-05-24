@@ -154,6 +154,7 @@ function startNewGame() {
   });
   incDecVal = 1;
   round = 0;
+  document.querySelector('#startNextRoundButton').innerText = 'Start Next Round';
   flipButtons();
   updateScores()
 }
